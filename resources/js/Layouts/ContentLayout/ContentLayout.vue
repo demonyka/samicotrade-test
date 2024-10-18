@@ -57,6 +57,7 @@ export default {
         grid-template-rows: 80px 1fr;
         grid-column-gap: 0;
         grid-row-gap: 0;
+        overflow: hidden;
     }
     .logo {
         grid-area: 1 / 1 / 2 / 2;
@@ -75,5 +76,6 @@ export default {
         grid-area: 2 / 2 / 3 / 3;
         background: var(--content-color);
         padding: var(--content-padding);
+        overflow: auto;
     }
 </style>

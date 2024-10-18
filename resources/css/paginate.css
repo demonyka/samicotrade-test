@@ -1,0 +1,20 @@
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.paginate-buttons {
+    border: none;
+    background: var(--bg-color);
+    color: var(--text-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    box-shadow: var(--block-shadow);
+}
+.active-page {
+    background: var(--accent-color);
+    color: var(--block-color);
+}

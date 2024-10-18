@@ -2,11 +2,15 @@
 import {Head, Link} from "@inertiajs/vue3";
 import ContentLayout from "@/Layouts/ContentLayout/ContentLayout.vue";
 import './table.css';
+import {VueAwesomePaginate} from "vue-awesome-paginate";
+import "vue-awesome-paginate/dist/style.css";
+import "../../../css/paginate.css";
 export default {
     components: {
         Head,
         ContentLayout,
-        Link
+        Link,
+        VueAwesomePaginate
     },
     props: [
         'products'
@@ -24,7 +28,20 @@ export default {
                     name: "Добавить продукты",
                     active: false
                 }
-            ]
+            ],
+            currentPage: this.products.current_page,
+        }
+    },
+    methods: {
+        paginateHandler(page) {
+            let url = new URL(window.location.href);
+            url.searchParams.set('page', page);
+            this.$inertia.visit(url);
+        },
+    },
+    watch: {
+        'currentPage': function (newVal) {
+            this.paginateHandler(newVal);
         }
     }
 
@@ -49,10 +66,22 @@ export default {
                     <td>{{ product.id }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.amount }} шт.</td>
-                    <td>{{ product.price }}$</td>
+                    <td>{{ product.price }} руб.</td>
                 </tr>
                 </tbody>
             </table>
+            <div v-if="products && products.total > products.per_page"
+                 style="display: flex; flex-direction: column; align-items: center;">
+                <VueAwesomePaginate
+                    v-model="currentPage"
+                    :current-page="products.current_page"
+                    :hide-prev-next-when-ends="true"
+                    :items-per-page="products.per_page"
+                    :max-pages-shown="3"
+                    :show-breakpoint-buttons="true"
+                    :total-items="products.total"
+                />
+            </div>
         </template>
     </ContentLayout>
 </template>
