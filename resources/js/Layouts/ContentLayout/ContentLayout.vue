@@ -1,7 +1,7 @@
 <script>
 import App from "@/App/App.vue";
 import Sidebar from "@/Layouts/ContentLayout/Sidebar.vue";
-import Header from "@/Layouts/ContentLayout/Header.vue";
+import Header from "@/Layouts/ContentLayout/Header/Header.vue";
 
 export default {
     name: "ContentLayout",

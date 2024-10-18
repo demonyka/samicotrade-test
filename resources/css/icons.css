@@ -3,6 +3,7 @@ i {
     height: 24px;
     background-position: center;
     background-size: cover;
+    display: block;
 }
 
 i.fa-home {
@@ -11,4 +12,8 @@ i.fa-home {
 
 i.fa-shopping-cart {
     background-image: url("/assets/icons/ui/shopping_cart.svg");
+}
+
+i.fa-user {
+    background-image: url("/assets/icons/ui/user.svg");
 }

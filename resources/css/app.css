@@ -11,6 +11,7 @@
     --sidebar-bg-color: #374050;
     --sidebar-item-color: #1F2633;
     --content-color: #F2F6FA;
+    --content-padding: 20px;
 }
 
 * {
