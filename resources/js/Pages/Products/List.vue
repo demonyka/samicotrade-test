@@ -24,7 +24,7 @@ export default {
                     active: true
                 },
                 {
-                    url: '#',
+                    url: route('products.create'),
                     name: "Добавить продукты",
                     active: false
                 }

@@ -21,6 +21,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('/products')->group(function () {
         Route::get('/list', [\App\Http\Controllers\Products\ProductsController::class, 'list'])->name('products.list');
+
+        Route::inertia('/create', 'Products/Create')->name('products.create');
+        Route::post('/create', [\App\Http\Controllers\Products\ProductsController::class, 'create'])->name('products.create');
     });
 });
 

@@ -17,3 +17,7 @@ i.fa-shopping-cart {
 i.fa-user {
     background-image: url("/assets/icons/ui/user.svg");
 }
+
+i.fa-delete {
+    background-image: url("/assets/icons/ui/delete.svg");
+}
