@@ -17,7 +17,7 @@ export default {
         <i class="fa-user"/>
     </button>
     <div v-if="showProfileDropdown" class="profile-dropdown">
-        <Link :href="'#'">Выход</Link>
+        <Link :href="route('auth.logout')">Выход</Link>
     </div>
 </template>
 

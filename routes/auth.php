@@ -12,5 +12,9 @@ Route::prefix('/auth')->group(function () {
             Route::post('/', [\App\Http\Controllers\Auth\RegisterController::class, 'store'])->name('auth.register');
         });
     });
+
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('auth.logout');
+    });
 });
 
