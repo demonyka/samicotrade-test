@@ -1,0 +1,65 @@
+form.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px
+}
+
+a.back-button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: var(--block-padding);
+    left: var(--block-padding);
+}
+
+a.back-button svg {
+    fill: var(--text-color);
+    width: 16px;
+    height: 16px;
+}
+
+form.auth-form input[type=text],
+form.auth-form input[type=password] {
+    width: 100%;
+    padding: 10px 15px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+form.auth-form input[type=text]:focus,
+form.auth-form input[type=password]:focus {
+    border-color: var(--accent-color);
+}
+
+form.auth-form button[type=submit] {
+    width: 100%;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+a.link {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 12px;
+    opacity: .6;
+    font-weight: 500;
+}
+
+a.link:hover {
+    opacity: 1;
+}
