@@ -4,12 +4,14 @@ import AuthLayout from "@/Layouts/AuthLayout.vue";
 import {Link, useForm} from "@inertiajs/vue3";
 import './auth.css';
 import {showError} from "@/scripts.js";
+import {Head} from "@inertiajs/vue3";
 
 export default {
     components: {
         AuthLayout,
         Card,
-        Link
+        Link,
+        Head
     },
     data() {
         return {
@@ -38,6 +40,7 @@ export default {
 </script>
 
 <template>
+    <Head title="Авторизация"/>
     <AuthLayout>
         <Card>
             <h1 class="auth-header">Авторизация</h1>

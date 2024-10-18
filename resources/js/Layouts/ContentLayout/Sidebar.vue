@@ -1,19 +1,23 @@
 <script>
+import {Link} from "@inertiajs/vue3";
 export default {
-    name: "Sidebar"
+    name: "Sidebar",
+    components: {
+        Link
+    }
 }
 </script>
 
 <template>
     <aside class="sidebar">
-        <a>
+        <Link :href="route('home')">
             <i class="fa-home"/>
             Главная
-        </a>
-        <a>
+        </Link>
+        <Link :href="route('products.list')">
             <i class="fa-shopping-cart"/>
             Продукты
-        </a>
+        </Link>
     </aside>
 </template>
 
@@ -39,6 +43,7 @@ export default {
         gap: 5px;
         cursor: pointer;
         opacity: .8;
+        text-decoration: none;
     }
     .sidebar a:hover {
         opacity: 1;

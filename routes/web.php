@@ -18,6 +18,10 @@ use Inertia\Inertia;
 
 Route::middleware(['auth'])->group(function () {
     Route::inertia('/', 'Home')->name('home');
+
+    Route::prefix('/products')->group(function () {
+        Route::get('/list', [\App\Http\Controllers\Products\ProductsController::class, 'list'])->name('products.list');
+    });
 });
 
 require __DIR__.'/auth.php';

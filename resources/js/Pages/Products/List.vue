@@ -1,7 +1,6 @@
 <script>
 import {Head} from "@inertiajs/vue3";
 import ContentLayout from "@/Layouts/ContentLayout/ContentLayout.vue";
-
 export default {
     components: {
         Head,
@@ -12,11 +11,9 @@ export default {
 </script>
 
 <template>
-    <Head title="Главная"/>
+    <Head title="Список продуктов"/>
     <ContentLayout>
-        <template #content>
-            <h2>Добро пожаловать, {{ $page.props.auth.user.username }}!</h2>
-        </template>
+
     </ContentLayout>
 </template>
 

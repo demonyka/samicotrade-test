@@ -4,12 +4,14 @@ import AuthLayout from "@/Layouts/AuthLayout.vue";
 import './auth.css';
 import {Link, useForm} from "@inertiajs/vue3";
 import {showError} from "@/scripts.js";
+import {Head} from "@inertiajs/vue3";
 
 export default {
     components: {
         Link,
         AuthLayout,
-        Card
+        Card,
+        Head
     },
     data() {
         return {
@@ -40,6 +42,7 @@ export default {
 </script>
 
 <template>
+    <Head title="Регистрация"/>
     <AuthLayout>
         <Card>
             <Link :href="route('auth.login')" class="back-button">

@@ -61,5 +61,6 @@ export default {
     .content {
         grid-area: 2 / 2 / 3 / 3;
         background: var(--content-color);
+        padding: var(--content-padding);
     }
 </style>
