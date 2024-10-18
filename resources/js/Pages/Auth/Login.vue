@@ -58,7 +58,7 @@ export default {
                     :class="{'error': form.errors.password}"
                     @focus="form.clearErrors('password')"
                 >
-                <button type="submit">Войти</button>
+                <button :disabled="form.processing" type="submit">Войти</button>
                 <Link :href="route('auth.register')" class="link">Зарегистрироваться</Link>
             </form>
         </Card>

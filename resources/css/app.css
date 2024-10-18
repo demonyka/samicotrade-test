@@ -8,6 +8,9 @@
     --block-padding: 16px;
     --block-color: #FFF;
     --block-gap: 10px;
+    --sidebar-bg-color: #374050;
+    --sidebar-item-color: #1F2633;
+    --content-color: #F2F6FA;
 }
 
 * {
@@ -25,6 +28,7 @@ body {
     height: 100vh;
     position: fixed;
     overflow: hidden;
+    transition: none;
 }
 
 #app {
@@ -61,4 +65,9 @@ button {
 
 button:hover {
     opacity: .8;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: .6;
 }

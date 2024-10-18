@@ -75,7 +75,7 @@ export default {
                     :class="{'error': form.errors.password_confirmation}"
                     @focus="form.clearErrors('password_confirmation')"
                 >
-                <button type="submit">Зарегистрироваться</button>
+                <button :disabled="form.processing" type="submit">Зарегистрироваться</button>
             </form>
         </Card>
     </AuthLayout>
