@@ -1,0 +1,33 @@
+.header {
+    grid-area: 1 / 2 / 2 / 3;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 var(--content-padding);
+    position: relative;
+}
+
+a.header-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    border-bottom: 4px solid transparent;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .6;
+}
+
+a.header-link:hover {
+    opacity: 1;
+}
+
+a.header-link.active {
+    opacity: 1;
+    border-bottom: 4px solid var(--accent-color);
+    color: var(--accent-color);
+    pointer-events: none;
+}

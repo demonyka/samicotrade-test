@@ -1,6 +1,7 @@
 <script>
 import {Link} from "@inertiajs/vue3";
 import ProfileButton from "@/Layouts/ContentLayout/Header/ProfileButton.vue";
+import './header.css';
 export default {
     name: "Header",
     components: {
@@ -20,12 +21,5 @@ export default {
 </template>
 
 <style scoped>
-    .header {
-        grid-area: 1 / 2 / 2 / 3;
-        background: var(--bg-color);
-        display: flex;
-        align-items: center;
-        padding: 0 var(--content-padding);
-        position: relative;
-    }
+
 </style>

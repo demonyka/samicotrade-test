@@ -2,14 +2,19 @@
 import App from "@/App/App.vue";
 import Sidebar from "@/Layouts/ContentLayout/Sidebar.vue";
 import Header from "@/Layouts/ContentLayout/Header/Header.vue";
+import {Link} from "@inertiajs/vue3";
 
 export default {
     name: "ContentLayout",
     components: {
+        Link,
         Header,
         Sidebar,
         App
     },
+    props: [
+        'links'
+    ],
     data() {
         return {
             appName: import.meta.env.VITE_APP_NAME
@@ -25,7 +30,15 @@ export default {
                 <h1>{{ appName }}</h1>
             </div>
             <Header>
-                <slot name="header"/>
+                <Link
+                    v-for="link in links"
+                    :key="link.url"
+                    :class="{'active': link.active }"
+                    class="header-link"
+                    :href="link.url"
+                >
+                    {{ link.name }}
+                </Link>
             </Header>
             <Sidebar/>
             <section class="content">

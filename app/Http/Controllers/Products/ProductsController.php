@@ -9,7 +9,7 @@ class ProductsController extends Controller
 {
     public function list()
     {
-        $products = Product::paginate(10);
+        $products = Product::paginate(1);
         return inertia('Products/List', ['products' => $products]);
     }
 }
