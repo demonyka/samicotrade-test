@@ -9,6 +9,7 @@ Route::prefix('/auth')->group(function () {
 
         Route::prefix('/register')->group(function () {
             Route::inertia('/', 'Auth/Register')->name('auth.register');
+            Route::post('/', [\App\Http\Controllers\Auth\RegisterController::class, 'store'])->name('auth.register');
         });
     });
 });

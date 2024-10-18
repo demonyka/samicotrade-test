@@ -45,6 +45,11 @@ form.auth-form input[type=password].error {
     color: var(--error-color);
 }
 
+form.auth-form input[type=text].error::placeholder,
+form.auth-form input[type=password].error::placeholder {
+    color: var(--error-color);
+}
+
 form.auth-form button[type=submit] {
     width: 100%;
     background-color: var(--accent-color);

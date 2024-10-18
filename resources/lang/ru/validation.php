@@ -13,5 +13,7 @@ return [
     'attributes' => [
         'username' => 'Логин',
         'password' => 'Пароль',
-    ]
+        'password_confirmation' => 'Подтверждение пароля',
+    ],
+    'confirmed' => 'Поле «:attribute» не совпадает с подтверждением.',
 ];

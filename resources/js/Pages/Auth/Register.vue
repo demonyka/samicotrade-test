@@ -2,10 +2,39 @@
 import Card from "@/Components/Elements/Card.vue";
 import AuthLayout from "@/Layouts/AuthLayout.vue";
 import './auth.css';
-import {Link} from "@inertiajs/vue3";
+import {Link, useForm} from "@inertiajs/vue3";
+import {showError} from "@/scripts.js";
 
 export default {
-    components: {Link, AuthLayout, Card}
+    components: {
+        Link,
+        AuthLayout,
+        Card
+    },
+    data() {
+        return {
+            form: useForm({
+                username: '',
+                password: '',
+                password_confirmation: '',
+            })
+        }
+    },
+    methods:{
+        submit() {
+            this.form.post(this.route('auth.register'), {
+                onError: (errors) => {
+                    Object.values(errors).forEach(error => {
+                        showError(error);
+                    });
+                    setTimeout(() => {
+                        this.form.clearErrors();
+                    }, 4000)
+                    this.form.reset('password_confirmation');
+                },
+            })
+        }
+    }
 
 }
 </script>
@@ -21,21 +50,30 @@ export default {
             <h1 class="auth-header">
                 Регистрация
             </h1>
-            <form class="auth-form">
+            <form @submit.prevent="submit" class="auth-form">
                 <input
                     type="text"
                     id="username"
                     placeholder="Логин"
+                    v-model="form.username"
+                    :class="{'error': form.errors.username}"
+                    @focus="form.clearErrors('username')"
                 >
                 <input
                     type="password"
                     id="password"
                     placeholder="Пароль"
+                    v-model="form.password"
+                    :class="{'error': form.errors.password}"
+                    @focus="form.clearErrors('password')"
                 >
                 <input
                     type="password"
                     id="password"
                     placeholder="Подтвердите пароль"
+                    v-model="form.password_confirmation"
+                    :class="{'error': form.errors.password_confirmation}"
+                    @focus="form.clearErrors('password_confirmation')"
                 >
                 <button type="submit">Зарегистрироваться</button>
             </form>
