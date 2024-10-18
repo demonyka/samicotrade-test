@@ -16,8 +16,8 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return inertia('Welcome');
+Route::middleware(['auth'])->group(function () {
+    Route::inertia('/', 'Home')->name('home');
 });
 
 require __DIR__.'/auth.php';

@@ -1,11 +1,11 @@
 <script>
 export default {
-    name: "Welcome"
+
 }
 </script>
 
 <template>
-    Hello
+    Home
 </template>
 
 <style scoped>
