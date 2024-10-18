@@ -39,6 +39,12 @@ form.auth-form input[type=password]:focus {
     border-color: var(--accent-color);
 }
 
+form.auth-form input[type=text].error,
+form.auth-form input[type=password].error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}
+
 form.auth-form button[type=submit] {
     width: 100%;
     background-color: var(--accent-color);

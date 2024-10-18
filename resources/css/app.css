@@ -2,6 +2,7 @@
     --bg-color: #FFF;
     --text-color: #000;
     --accent-color: #1190ff;
+    --error-color: var(--toastify-color-error);
     --block-shadow: 2px 4px 10px 0px rgba(34, 60, 80, 0.2);
     --block-border-radius: 10px;
     --block-padding: 16px;
