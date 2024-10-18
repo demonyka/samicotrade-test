@@ -18,13 +18,19 @@ class ProductsController extends Controller
     public function create(CreateProductRequest $request)
     {
         $products = $request->products;
-        foreach ($products as $product) {
-            Product::create([
+
+        $productsData = array_map(function ($product) {
+            return [
                 'name' => $product['name'],
                 'amount' => $product['amount'],
                 'price' => $product['price'],
-            ]);
-        }
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+        }, $products);
+
+        Product::insert($productsData);
+
         return back()->with('message', 'Продукты успешно созданы');
     }
 }

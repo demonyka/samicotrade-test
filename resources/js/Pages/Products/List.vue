@@ -5,6 +5,7 @@ import './table.css';
 import {VueAwesomePaginate} from "vue-awesome-paginate";
 import "vue-awesome-paginate/dist/style.css";
 import "../../../css/paginate.css";
+import {formatDateToRu} from "../../scripts.js";
 export default {
     components: {
         Head,
@@ -33,6 +34,7 @@ export default {
         }
     },
     methods: {
+        formatDateToRu,
         paginateHandler(page) {
             let url = new URL(window.location.href);
             url.searchParams.set('page', page);
@@ -59,6 +61,7 @@ export default {
                     <th>Наименование</th>
                     <th>Кол-во</th>
                     <th>Стоимость</th>
+                    <th>Добавлен</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,6 +70,7 @@ export default {
                     <td>{{ product.name }}</td>
                     <td>{{ product.amount }} шт.</td>
                     <td>{{ product.price }} руб.</td>
+                    <td>{{ formatDateToRu(product.created_at) }}</td>
                 </tr>
                 </tbody>
             </table>
